@@ -1,0 +1,50 @@
+h1,h2,h3,h4,h5,h6{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.index-body{
+    background: linear-gradient(#9198e5, #e66465);
+    min-height: 1200px;
+}
+
+footer{
+    min-height: 500px;
+}
+
+#journey{
+    min-height: 900px;
+}
+
+.countryblock{
+    border-radius: 100px;
+    transition: all .1s ease-in-out; 
+}
+
+.cityblock, .profferblock{
+    border-radius: 40px;
+    transition: all .1s ease-in-out; 
+}
+
+.countryblock:hover, .cityblock:hover, .profferblock:hover{
+    cursor: pointer;
+    transform: scale(1.05); 
+}
+
+
+
+.textshadow{
+    text-shadow: 1px 1px 50px rgb(41, 1, 41);
+}
+
+#slideup{
+    cursor: pointer;
+}
+
+.bgraund{
+    background-color: rgba(41, 1, 41, 0.5);
+}
+
+.imgprof{
+    height: 150px;
+    width: 250px;
+}

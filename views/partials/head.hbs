@@ -1,0 +1,19 @@
+<div class="container-fluid">
+        <header class="row justify-content-end">
+           <div class="bg-light row justify-content-start col-12 pl-5" style=" display:none; border-bottom-left-radius: 50px" id="slideblock">
+               <button class="btn btn-light text-dark py-2 m-3 col-12 col-lg-1" onclick="location.href='/'">Главная</button>
+               {{#each navbar}}
+                   <button class="btn btn-light text-dark py-2 m-3 col-12 col-lg-1" onclick="location.href='/country_{{id_country}}'">{{country_name}}</button>
+               {{/each}}
+                {{#if ('isdefined' sessionUser)}}
+                    <button class="btn btn-light text-dark py-2 m-3 col-12 col-lg-1" onclick="location.href='/profile'">Профиль</button>
+                {{else}}
+                    <button class="btn btn-light text-dark py-2 m-3 col-12 col-lg-1" onclick="location.href='/login'">Вход</button>
+                    <button class="btn btn-light text-dark py-2 m-3 col-12 col-lg-1" onclick="location.href='/registration'">Регистрация</button>
+                {{/if}}
+           </div>
+            <div class="col-3 bg-light justify-content-center py-4 border-top" style="height: 40px; border-bottom-left-radius: 100px" id="slideup">
+              
+            </div>
+        </header>
+</div>

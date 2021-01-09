@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="keywords" content="Тур агенство, туризм, путешествия, египет"/>
+    <meta name="description" content="{{data.0.country_info}}"/>
+    <title>SamsaraAgency: {{data.0.country_name}}</title>
+    {{>link}}
+</head>
+<body class="index-body">
+    {{>head}}
+
+    
+
+    <section class="w-100 mt-n5 align-items-center d-flex justify-content-center" style="position: absolute; height: 950px; background-color:black; z-index: -1; background: url('{{data.0.country_background}}'); background-size:cover;">
+        <div class="col-md-6 col-12 p-5" style="background-color: rgba(0, 0, 0, 0.7);">
+            <h2 class="display-4 text-center col-12 text-white">{{data.0.country_name}}</h2>
+            <p class="text-white">{{data.0.country_info}}</p>
+        </div>
+    </section>
+
+    <section style="height: 900px;"></section>
+
+    <section class="py-5 my-5" style="min-height: 800px;">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-12">
+                    <h2 class="display-4 text-center text-white col-12 pb-5">Наши предложения</h2>
+                </div>
+             
+
+                {{#if ('isnull' data.[0].id_hotel)}}
+                <div class="col-12 row" id="hotelsblock">
+                    {{#each data}}
+                        {{#if ('isdefined' id_hotel)}}
+                        <div class="rounded row col-12 bg-light my-3 p-2" style="min-height: 300px;  box-shadow: 2px 2px 10px purple;">
+                            <div style="background-image: url({{img_1}}); height: 300px; width:350px" class="col-lg-4 col-12 p-3">
+                            </div>
+                            <div class="col-lg-8 col-12 py-2">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td class="text-center py-2" colspan="3">{{hotel_name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center py-2">Город: {{city_name}}</td>
+                                        <td class="text-center py-2">Количество звёзд: {{stars}}</td>
+                                        
+                                        <td class="text-center py-2 status" id="status{{id_hotel}}"></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td  colspan="3">{{hotel_info}}</td>
+                                    </tr>
+
+                                </table>
+
+                            </div>
+                            <div class="col-12 row p-2 border-top border-secondary" style="display:none;" id="proffersAppend{{id_hotel}}">
+                                {{#each ../proffer}}
+                                    {{#ifEquals ../id_hotel hotel_id}}
+                                        <div class="col-3 m-4 p-3 row justify-content-center align-items-end profferblock" style="height: 100px; background: url('{{img_1}}');" id="{{proffer_id}}">
+                                            
+                                            <span class="text-center">Класс:{{class}}<br>Цена:{{price}}</span>
+                                        </div>
+                                    {{/ifEquals}}                       
+                                {{/each}}
+                            </div>
+                            
+                        </div>
+                        <div class="rounded col-12 mb-3 mt-n3 row justify-content-end">
+                                <button class="statusbtn btn rounded-bottom text-white col-4 p-2 btn-primary showproffersbtn" id="btn{{id_hotel}}">Подробнее..</button> 
+                        </div>
+                    {{/if}}
+                    {{/each}}
+                    
+                </div>
+               
+                {{else}}
+                    <h1 class="display-4 col-12 text-center py-5 text-white">На данный момент нет доступных отелей!</h1>
+                {{/if}}
+            </div>
+        </div>
+    </section>
+    {{>foot}}
+
+</body>
+</html>

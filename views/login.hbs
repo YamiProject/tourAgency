@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="keywords" content="Тур агенство, туризм, путешествия, египет"/>
+    <meta name="description" content="{{data.0.country_info}}"/>
+    <title>SamsaraAgency: {{data.0.country_name}}</title>
+    {{>link}}
+</head>
+<body class="index-body">
+    
+    <section style="height: 900px;" class="row align-items-center justify-content-center">
+        <div class="container row align-items-center justify-content-center">
+            <div class="bg-light col-6 rounded p-5 row justify-content-center" style="min-height: 300px">
+                <h1 class="col-12">Вход</h1>
+                <form class="col-12" action="" method="post" action="/login">
+                    <label for="">Email</label>
+                    <input type="text" class="form-control" name="em">
+                    <label for="">Пароль</label>
+                    <input type="password" class="form-control" name="ps" id="">
+
+                    <input type="submit" value="Войти" class="btn btn-primary col-12 mt-2">
+                </form>
+                <button class="btn btn-primary m-2 col-5" onclick="location.href='/'">Главная страницы</button><button class="btn btn-primary m-2 col-5" onclick="location.href='/registration'">Регистрация</button>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="keywords" content="Тур агенство, туризм, путешествия, египет"/>
+    <meta name="description" content="{{data.0.country_info}}"/>
+    <title>SamsaraAgency: Регистрация</title>
+    {{>link}}
+</head>
+<body class="index-body">
+    
+    <section style="height: 900px;" class="row align-items-center justify-content-center">
+        <div class="container row align-items-center- justify-content-center">
+            <div class="bg-light col-6 rounded p-5 row justify-content-center" style="min-height: 300px">
+                <h1 class="col-12">Регистрация</h1>
+                <form method="post" action="/registration" class="col-12">
+                    <label for="">Email</label>
+                    <input class="form-control" type="text" class="form-control" name="em">
+                    <label for="">Пароль</label>
+                    <input class="form-control" type="password" class="form-control" name="ps" id="">
+                    <label for="">Имя</label>
+                    <input class="form-control" type="text" class="form-control" name="na" id="">
+                    <label for="">Фамилия</label>
+                    <input class="form-control" type="text" class="form-control" name="sn" id="">
+                    <label for="">Отчество</label>
+                    <input class="form-control" type="text" class="form-control" name="mdl" id="">
+                    <label for="">Номер телефона</label>
+                    <input class="form-control" type="number" class="form-control" name="ph" id="" maxlength="11">
+
+                    <input type="submit" value="Зарегистрироваться" class="btn btn-primary col-12 mt-2">
+                </form>
+                <button class="btn btn-primary m-2 col-5" onclick="location.href='/'">Главная страницы</button><button class="btn btn-primary m-2 col-5" onclick="location.href='/login'">Вход</button>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>

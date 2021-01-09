@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="keywords" content="Тур агенство, туризм, путешествия"/>
+    <meta name="description" content="SmsaraAgT предлагает множество туров в разные страны мира."/>
+    <title>SamsaraAgency: {{sessionUser}}</title>
+    {{>link}}
+</head>
+<body class="index-body">
+    {{>head}}
+
+    <div class="container">
+        
+        <section style="min-height: 900px;" class="py-5">
+            <div class="container">
+                <div class="col-12 row justify-content-end bg-light px-5 border" style="background: url('https://i.ytimg.com/vi/AjSKaSsBhuo/maxresdefault.jpg'); background-position: bottom;">
+                    <div class="row col-lg-4 col-23 my-5 bg-light p-5" style="min-height: 200px;">
+                        <span class="col-12 border-bottom">Имя: {{data.0.name}}</span>
+                        <span class="col-12 border-bottom">Фамилия: {{data.0.surname}}</span>
+                        <span class="col-12 border-bottom">Отчество: {{data.0.middlename}}</span>
+                        <span class="col-12 border-bottom">Номер телефона: +{{data.0.number}}</span>
+                        <button class="btn btn-primary col-12 mt-1" onclick="location.href='/unlogin'">Выйти</button>
+                    </div>
+                </div>
+
+                <div class="col-12 py-5 my-5">
+                    {{#if ('isnull' data.0.id_order)}}
+                        
+                    
+                    <h1 class="col-12 text-white text-center pb-5 display-3">Ваши заказы</h1>
+                    {{#each data }}
+                        <div class="col-12 row bg-light rounded" style="box-shadow: 2px 2px 10px purple;">
+                            <div class="col-xl-5 col-12 border-right p-5 mt-5">
+                                <img src="{{country_background}}" alt="" class="rounded-circle" style="width: 300px; height:200px">
+                            </div>
+                            <div class="col-xl-7 col-12 p-5">
+                                <table class="col-12 table table-bordered">
+                                    <tr>
+                                        <td colspan="4" class="text-center">Номер заказа: {{id_order}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">Страна: {{country_name}}</td>
+                                        <td class="text-center">Город: {{city_name}}</td>
+                                        <td class="text-center" >Отель: {{hotel_name}}</td>
+                                        <td class="text-center" >Звёзды: {{starts}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center" colspan="2">Класс: {{class}}</td>
+                                        {{#ifEquals food 1}}
+                                        <td class="text-center" colspan="2">Обеды: Да</td>
+                                        {{else}}
+                                        <td class="text-center" colspan="2">Обеды: Нет</td>
+                                        {{/ifEquals}}
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center" colspan="2">Дата вылета: {{data_start}}</td>
+                                        <td class="text-center" colspan="2">Дата отлёта: {{data_end}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center" colspan="4">Цена: {{price}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    {{/each}}
+                    {{else}}
+                        <h1 class="col-12 text-white text-center pb-5 display-3">У вас нет заказов.</h1>
+                    {{/if}}
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    {{>foot}}
+
+</body>
+</html>

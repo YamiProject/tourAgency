@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="keywords" content="Тур агенство, туризм, путешествия, египет"/>
+    <meta name="description" content="{{data.0.country_info}}"/>
+    <title>SamsaraAgency: {{data.0.country_name}}</title>
+    {{>link}}
+</head>
+<body class="index-body">
+    {{>head}}
+
+    
+        <div class="container-fluid">
+            <section class="py-5 row justify-content-center" >
+                <div class="col-9 m-5 p-5 bg-light h-100 row rounded" style="min-height: 900px;">
+                    <div class="col-xl-9 col-12 p-5 border overflow-auto">
+                        <div class="row justify-content-center">
+                            {{#if ('isnull' data.img_1)}}
+                                <img src="{{data.img_2}}" alt="" class="imgprof mx-1">
+                            {{/if}}
+                            {{#if ('isnull' data.img_2)}}
+                                <img src="{{data.img_2}}" alt="" class="imgprof mx-1">
+                            {{/if}}
+                            {{#if ('isnull' data.img_3)}}
+                                <img src="{{data.img_3}}" alt="" class="imgprof mx-1">
+                            {{/if}}
+                            {{#if ('isnull' data.img_4)}}
+                                <img src="{{data.img_4}}" alt="" class="imgprof mx-1">
+                            {{/if}}
+                            {{#if ('isnull' data.img_5)}}
+                                <img src="{{data.img_5}}" alt="" class="imgprof mx-1">
+                            {{/if}}
+                        </div>
+                        <h1 class="text-center display-4 pt-5 pb-3 col-12">{{data.hotel_name}}</h1>
+                        <p>{{data.hotel_info}}</p>
+                    </div>
+                    <div class="col-xl-3 col-12 border p-5">
+                        <p class="display-4" style="font-size: 20pt !important;">Класс: {{data.class}}</p>
+                        {{#ifEquals data.food 1}}
+                        <p class="display-4" style="font-size: 20pt !important;">Обеды: Да</p>
+                        {{else}}
+                        <p class="display-4" style="font-size: 20pt !important;">Обеды: Нет</p>
+                        {{/ifEquals}}
+                        <p class="display-4" style="font-size: 20pt !important;">Дата начала: {{data.data_start}}</p>
+                        <p class="display-4" style="font-size: 20pt !important;">Дата окончания:{{data.data_end}}</p>
+                        <h2>Цена: {{data.price}}</h2>
+                        <form action="/order" method="post">
+                            <input type="hidden" value="{{data.proffer_id}}" name="idprof">
+                            <button class="btn btn-primary col-12">Заказать</button>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+        </section>
+ 
+    {{>foot}}
+
+</body>
+</html>
